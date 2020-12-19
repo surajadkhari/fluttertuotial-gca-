@@ -52,7 +52,6 @@ class _MultiplewidgetState extends State<Multiplewidget> {
     );
   }
 
-//Mthod for button
   Widget _eachButtonBuilder(String buttonText) {
     return Container(
       alignment: Alignment.center,
