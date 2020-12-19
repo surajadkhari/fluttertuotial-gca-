@@ -1,14 +1,34 @@
 import 'package:flutter/material.dart';
 
 class Settingitem extends StatelessWidget {
+  final IconData iconData;
+  final Color iconBackgroundColor;
   final double settingWidth, settingheight;
-  Settingitem({@required this.settingWidth, @required this.settingheight});
+  String title, subtitle;
+  Settingitem(
+      {@required this.settingWidth,
+      @required this.settingheight,
+      @required this.title,
+      @required this.subtitle,
+      @required this.iconData,
+      @required this.iconBackgroundColor});
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
       width: settingWidth,
       height: settingheight,
-      decoration: BoxDecoration(color: Colors.white),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade300,
+            spreadRadius: 0.5,
+            blurRadius: 0.8,
+            offset: Offset(1, 1),
+          )
+        ],
+      ),
       child: SizedBox(
         child: Padding(
           padding: const EdgeInsets.only(left: 20),
@@ -25,11 +45,11 @@ class Settingitem extends StatelessWidget {
     return Container(
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: iconBackgroundColor,
           shape: BoxShape.circle,
         ),
         child: Icon(
-          Icons.wifi,
+          iconData,
           color: Colors.white,
         ));
   }
@@ -41,12 +61,12 @@ class Settingitem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Netwrok & Internet",
+          title,
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         Text(
-          "Wifi,mobile,data usage",
-          style: TextStyle(color: Colors.grey.shade400),
+          subtitle,
+          style: TextStyle(color: Colors.grey.shade800),
         )
       ],
     );
