@@ -20,7 +20,7 @@ void main() {
   // Map<String, String> fixedTypeMap = {"name": "Jone", "age": "22"};
   // print(fixedTypeMap);
 
-  Map<String, List<int>> userInfo = {
+  Map<String, List<dynamic>> userInfo = {
     "address": [12, 13, 14, "Hellp"]
   };
 }
